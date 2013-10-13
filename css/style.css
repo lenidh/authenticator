@@ -1,0 +1,141 @@
+
+body {
+	overflow: hidden;
+	
+}
+
+#header {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 5rem;
+	color: #fff;
+	background-image: -moz-linear-gradient(top, #cd6723, #bb482d);
+	background-image: -webkit-linear-gradient(top, #cd6723, #bb482d);
+	background-image: -ms-linear-gradient(top, #cd6723, #bb482d);
+	background-image: linear-gradient(top, #cd6723, #bb482d);
+}
+
+#header-left {
+	float:left;
+	width: 2rem;
+	height: 5rem;
+}
+
+#header-title {
+	float:left;
+	height: 5rem;
+	margin-left: 1rem;
+	line-height: 5rem;
+}
+
+#content {
+	position: absolute;
+	top: 5rem;
+	bottom: 0;
+	width: 100%;
+	overflow: auto;
+}
+
+/** Accounts **/
+#token-list {
+	margin: 0 1.5rem;
+}
+
+.token-item {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	padding-left: 1.5rem;
+	border-bottom: 0.1rem solid #e7e7e7;
+}
+
+.token {
+	padding: 0.2rem 0;
+	float: left;
+}
+
+.indicator {
+	width: 2.5rem;
+	height: 2.5rem;
+	padding: 0.2rem 0;
+	float: right;
+}
+
+.label {
+	clear: both;
+}
+
+/** Fonts **/
+
+@font-face {
+	font-family: FiraSans;
+	font-weight: 300;
+	src: url(../fonts/FiraSans-Light.ttf) format("truetype");
+}
+@font-face {
+	font-family: FiraSans;
+	font-weight: 400;
+	src: url(../fonts/FiraSans-Regular.ttf) format("truetype");
+}
+@font-face {
+	font-family: FiraSans;
+	font-weight: 500;
+	src: url(../fonts/FiraSans-Medium.ttf) format("truetype");
+}
+@font-face {
+	font-family: FiraMono;
+	font-weight: bold;
+	src: url(../fonts/FiraMono-Bold.ttf) format("truetype");
+}
+
+html {
+	font-size: 10px;
+	font-family: FiraSans, sans-serif;
+}
+
+h1 {
+	font-size: 2.5rem;
+	font-weight: 400;
+}
+
+h2 {
+	font-size: 1.6rem;
+	font-weight: 400;
+}
+
+p, ul {
+	font-size: 1.9rem;
+	font-weight: 400;
+}
+
+p.large {
+	font-size: 2.3rem;
+	font-weight: 300;
+}
+
+p.alt {
+	font-size: 1.7rem;
+	font-weight: 500;
+}
+
+p.small {
+	font-size: 1.5rem;
+	font-weight: 400;
+}
+
+p.mini {
+	font-size: 1.4rem;
+	font-weight: 400;
+}
+
+p.micro {
+	font-size: 1.3rem;
+	font-weight: 400;
+}
+
+
+.token {
+	font-family: FiraMono, monospace;
+	font-size: 2.5rem;
+	font-weight: bold;
+}
