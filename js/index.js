@@ -15,12 +15,14 @@ function initTokenList() {
 	var tokenList = document.getElementById("token-list");
 	var tokenListHtml = "";
 	for(var i = 0; i < accounts.length; i++) {
+		tokenListHtml += "<li><a href=\"./edit.html?id=" + i + "\">"
 		tokenListHtml += "<div class=\"token-item\">";
 		tokenListHtml += "<p class=\"issuer\">" + accounts[i].issuer + "</p>";
 		tokenListHtml += "<p id=\"token" + i + "\" class=\"token\"></p>";
 		tokenListHtml += "<canvas id=\"indicator" + i + "\" class=\"indicator\" width=\"50px\" height=\"50px\"></canvas>";
 		tokenListHtml += "<p class=\"label small\">" + accounts[i].label + "</p>";
 		tokenListHtml += "</div>";
+		tokenListHtml += "</a></li>";
 	}
 	tokenList.innerHTML = tokenListHtml;
 
@@ -67,7 +69,6 @@ function drawIndicator(i, value) {
 			context.arc(xCenter, yCenter, radius, 1.5 * Math.PI, end * Math.PI, true);
 			context.lineTo(xCenter, yCenter);
 			context.closePath();
-			//context.stroke();
 			context.fill();
 		}
 	}

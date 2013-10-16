@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Authenticator</title>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Generate one-time passwords." />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+		<link rel="stylesheet" href="./css/reset.css" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<script src="./js/encoding.js"></script>
+		<script src="./js/account.js"></script>
+		<script>
+			var accounts;
+			var id;
+			var label;
+			var issuer;
+
+			window.onbeforeunload = function() {
+				accounts[id].label = label.value;
+				accounts[id].issuer = issuer.value;
+				saveAccounts(accounts);
+			};
+
+			function init() {
+				label = document.getElementById("label");
+				issuer = document.getElementById("issuer");
+
+				id = getUrlParameter("id");
+				accounts = loadAccounts();
+
+				label.value = accounts[id].label;
+				issuer.value = accounts[id].issuer;
+			}
+		</script>
+	</head>
+	<body onload="init();" onubeforeunload="return 'Tschuess'">
+		<div id="header">
+			<a href="index.html"><div id="header-left" class="header-back"></div></a>
+			<h1 id="header-title">Auth</h1>
+		</div>
+		<div id="main" class="light-2nd-screen">
+			<div id="content">
+				<form>
+					<p class="input-label">Label</p>
+					<span class="input-span"><input id="label" name="label" type="text"/></span>
+					<p class="input-label">Issuer</p>
+					<span class="input-span"><input id="issuer" name="issuer" type="text"/></span>
+				</form>
+			</div>
+		</dib>
+	</body>
+</html>

@@ -99,3 +99,14 @@ function toBytes(str) {
 	return strBytes;
 }
 
+function getUrlParameter(name) {
+	var value = null;
+	var parameters = window.location.search.substring(1).split('&');
+	for(var i = 0; i < parameters.length; i++) {
+		var parameter = parameters[i].split('=');
+		if(parameter[0] == name) {
+			value = parameter[1];
+		}
+	}
+	return value;
+}

@@ -1,7 +1,6 @@
 
 body {
 	overflow: hidden;
-	
 }
 
 #header {
@@ -22,6 +21,11 @@ body {
 	height: 5rem;
 }
 
+.header-back {
+	border-width: 0.1rem;
+	background-color: #a03f25;
+}
+
 #header-title {
 	float:left;
 	height: 5rem;
@@ -29,7 +33,7 @@ body {
 	line-height: 5rem;
 }
 
-#content {
+#main {
 	position: absolute;
 	top: 5rem;
 	bottom: 0;
@@ -37,9 +41,18 @@ body {
 	overflow: auto;
 }
 
-/** Accounts **/
-#token-list {
+.light-2nd-screen {
+	background: #f4f4f4;
+}
+
+#content {
 	margin: 0 1.5rem;
+}
+
+/** Accounts **/
+#token-list a {
+	color: inherit;
+	text-decoration: inherit;
 }
 
 .token-item {
@@ -47,6 +60,10 @@ body {
 	padding-bottom: 1rem;
 	padding-left: 1.5rem;
 	border-bottom: 0.1rem solid #e7e7e7;
+}
+
+.token-item a {
+	color: black;
 }
 
 .token {
@@ -63,6 +80,27 @@ body {
 
 .label {
 	clear: both;
+}
+
+/** Forms **/
+.input-label {
+	padding-top: 1.3rem;
+	padding-bottom: 0.4rem;
+	padding-left: 0.6rem;
+}
+
+input[type=text] {
+	width: 100%;
+	height: 38px;
+	padding: 0 1.4rem;
+	border: 0.1rem solid #a6a6a6;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	box-shadow: 0 0.1rem 0.1rem #d1d1d1;
 }
 
 /** Fonts **/
@@ -113,7 +151,7 @@ p.large {
 	font-weight: 300;
 }
 
-p.alt {
+p.alt, input[type=text] {
 	font-size: 1.7rem;
 	font-weight: 500;
 }
@@ -131,6 +169,12 @@ p.mini {
 p.micro {
 	font-size: 1.3rem;
 	font-weight: 400;
+}
+
+p.input-label {
+	font-size: 1.7rem;
+	font-weight: 400;
+	text-transform: uppercase;
 }
 
 

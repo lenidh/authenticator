@@ -12,70 +12,71 @@
 		<script src="./js/account.js"></script>
 		<script src="./js/index.js"></script>
 		<script>
-			localStorage.clear();
+			var newUser = localStorage.getItem("newUser");
+			if(newUser != "false") {
+				localStorage.clear();
 
-			acc1 = new Account();
-			acc1.type = "totp";
-			acc1.label = "Example:alice@example.com";
-			acc1.secret = "JBSWY3DPEHPK3PXP";
-			acc1.issuer = "Example";
+				acc1 = new Account();
+				acc1.type = "totp";
+				acc1.label = "Example:alice@example.com";
+				acc1.secret = "JBSWY3DPEHPK3PXP";
+				acc1.issuer = "Example";
 
-			acc2 = new Account();
-			acc2.type = "totp";
-			acc2.label = "Example:marc@example.org";
-			acc2.secret = "KP325ADHKECC5BAFGU======";
-			acc2.issuer = "Example";
+				acc2 = new Account();
+				acc2.type = "totp";
+				acc2.label = "Example:marc@example.org";
+				acc2.secret = "KP325ADHKECC5BAFGU======";
+				acc2.issuer = "Example";
 
-			acc3 = new Account();
-			acc3.type = "totp";
-			acc3.label = "Example:bob@example.org";
-			acc3.secret = "KP325ADHKECC5BAF";
-			acc3.issuer = "Example";
+				acc3 = new Account();
+				acc3.type = "totp";
+				acc3.label = "Example:bob@example.org";
+				acc3.secret = "KP325ADHKECC5BAF";
+				acc3.issuer = "Example";
 
-			acc4 = new Account();
-			acc4.type = "totp";
-			acc4.label = "Example:mary@example.org";
-			acc4.secret = "KP325CDHKECC5BAF";
-			acc4.issuer = "Example";
+				acc4 = new Account();
+				acc4.type = "totp";
+				acc4.label = "Example:mary@example.org";
+				acc4.secret = "KP325CDHKECC5BAF";
+				acc4.issuer = "Example";
 
-			acc5 = new Account();
-			acc5.type = "totp";
-			acc5.label = "Example:oliver@example.org";
-			acc5.secret = "KP325ADHKEBC5BAF";
-			acc5.issuer = "Example";
+				acc5 = new Account();
+				acc5.type = "totp";
+				acc5.label = "Example:oliver@example.org";
+				acc5.secret = "KP325ADHKEBC5BAF";
+				acc5.issuer = "Example";
 
-			acc6 = new Account();
-			acc6.type = "totp";
-			acc6.label = "Example:karl@example.org";
-			acc6.secret = "KP325ADHFEBC5BAF";
-			acc6.issuer = "Example";
+				acc6 = new Account();
+				acc6.type = "totp";
+				acc6.label = "Example:karl@example.org";
+				acc6.secret = "KP325ADHFEBC5BAF";
+				acc6.issuer = "Example";
 
-			acc7 = new Account();
-			acc7.type = "totp";
-			acc7.label = "Example:linn@example.org";
-			acc7.secret = "1P325ADHKEBC5BAF";
-			acc7.issuer = "Example";
+				acc7 = new Account();
+				acc7.type = "totp";
+				acc7.label = "Example:linn@example.org";
+				acc7.secret = "1P325ADHKEBC5BAF";
+				acc7.issuer = "Example";
 
-			acc8 = new Account();
-			acc8.type = "totp";
-			acc8.label = "Example:pan@example.org";
-			acc8.secret = "KP32AADHKEBC5BAF";
-			acc8.issuer = "Example";
+				acc8 = new Account();
+				acc8.type = "totp";
+				acc8.label = "Example:pan@example.org";
+				acc8.secret = "KP32AADHKEBC5BAF";
+				acc8.issuer = "Example";
 
-			accounts = new Array();
-			accounts.push(acc1);
-			accounts.push(acc2);
-			accounts.push(acc3);
-			accounts.push(acc4);
-			accounts.push(acc5);
-			accounts.push(acc6);
-			accounts.push(acc7);
-			accounts.push(acc8);
+				accounts = new Array();
+				accounts.push(acc1);
+				accounts.push(acc2);
+				accounts.push(acc3);
+				accounts.push(acc4);
+				accounts.push(acc5);
+				accounts.push(acc6);
+				accounts.push(acc7);
+				accounts.push(acc8);
 
-			saveAccounts(accounts);
-
-			delete accounts;
-			delete acc1;
+				saveAccounts(accounts);
+				localStorage.setItem("newUser", "false");
+			}
 		</script>
 	</head>
 	<body onload="initTokenList();">
@@ -83,9 +84,11 @@
 			<div id="header-left"></div>
 			<h1 id="header-title">Auth</h1>
 		</div>
-		<div id="content">
-			<ul id="token-list">
-			</ul>
+		<div id="main">
+			<div id="content">
+				<ul id="token-list">
+				</ul>
+			</div>
 		</dib>
 	</body>
 </html>
